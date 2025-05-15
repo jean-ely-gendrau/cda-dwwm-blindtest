@@ -1,5 +1,7 @@
+import { UUID } from "crypto";
+
 class GameDTO {
-    game_id: number;
+    game_id: UUID;
 
     constructor(game_id: number) {
         this.game_id = game_id;

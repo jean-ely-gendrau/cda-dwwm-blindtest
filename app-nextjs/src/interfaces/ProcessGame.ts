@@ -1,7 +1,7 @@
 import { UUID } from "crypto";
 import { PlayerInterfaceDTO } from "./ProcessPlayer";
 
-export interface JoigneGame {
+export interface JoinGame {
     id_game: UUID;
 }
 
