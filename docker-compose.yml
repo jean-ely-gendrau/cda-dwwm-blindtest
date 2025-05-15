@@ -1,6 +1,7 @@
 
 services:
   db:
+      container_name: mysql
       image: mysql:8
       restart: always
       environment:
@@ -10,3 +11,10 @@ services:
         MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       ports:
         - "3325:3306"
+  
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8100:8080
