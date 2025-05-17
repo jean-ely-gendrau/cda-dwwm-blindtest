@@ -17,8 +17,10 @@ export default function Home(){
   
         const response = await fetch("http://localhost:3000/api/v1/game/history");
         setPlayer(await response.json());
-        console.log(player);
-        console.log(response);
+        if (process.env.NODE_ENV === 'development') {
+            console.log(player);
+            console.log(response);
+        }
       
       
     
