@@ -1,7 +1,7 @@
 'use client'
 import Hero from "@/component/hero";
 import React, {useEffect, useState} from 'react';
-import { PlayerInterfaceDTO } from "@/interfaces/ProcessPlayer";
+// (Line removed)
 
 /* Les import en dessous sont pour voir le rendu, à supprimer */
 import PlayerDTO from "@/dto/PlayerDTO";
