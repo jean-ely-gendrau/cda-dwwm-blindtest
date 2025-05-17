@@ -4,8 +4,6 @@ import React, {useEffect, useState} from 'react';
 import { PlayerInterfaceDTO } from "@/interfaces/ProcessPlayer";
 
 /* Les import en dessous sont pour voir le rendu, à supprimer */
-import Footer from "@/component/layout/Footer";
-import NavBar from "@/component/layout/Header";
 import PlayerDTO from "@/dto/PlayerDTO";
 
 
