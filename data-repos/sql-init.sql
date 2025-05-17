@@ -22,7 +22,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`game` (
   `game_id` INT NOT NULL AUTO_INCREMENT,
-  `created_at` TIMESTAMP NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`game_id`))
 ENGINE = InnoDB;
 
