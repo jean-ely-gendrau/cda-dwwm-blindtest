@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema blind_test
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema blind_test
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `blind_test` ;
+USE `blind_test` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`game`
+-- Table `blind_test`.`game`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`game` (
+CREATE TABLE IF NOT EXISTS `blind_test`.`game` (
   `game_id` INT NOT NULL AUTO_INCREMENT,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`game_id`))
@@ -28,10 +28,10 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`player`
+-- Table `blind_test`.`player`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`player` (
-  `player_id` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `blind_test`.`player` (
+  `player_id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NULL,
   `points` INT NULL,
   PRIMARY KEY (`player_id`))
@@ -39,9 +39,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`game_history`
+-- Table `blind_test`.`game_history`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`game_history` (
+CREATE TABLE IF NOT EXISTS `blind_test`.`game_history` (
   `game_game_id` INT NOT NULL,
   `player_player_id` INT NOT NULL,
   PRIMARY KEY (`game_game_id`, `player_player_id`),
@@ -49,12 +49,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`game_history` (
   INDEX `fk_game_has_player_game_idx` (`game_game_id` ASC) VISIBLE,
   CONSTRAINT `fk_game_has_player_game`
     FOREIGN KEY (`game_game_id`)
-    REFERENCES `mydb`.`game` (`game_id`)
+    REFERENCES `blind_test`.`game` (`game_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_game_has_player_player1`
     FOREIGN KEY (`player_player_id`)
-    REFERENCES `mydb`.`player` (`player_id`)
+    REFERENCES `blind_test`.`player` (`player_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -63,3 +63,28 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- Dump completed on 2025-05-15 10:56:12
+-- -----------------------------------------------------
+-- Dummy data for table `blind_test`.`game`
+-- -----------------------------------------------------
+INSERT INTO `blind_test`.`game` (`game_id`, `created_at`) VALUES (1, '2025-05-15 10:56:12');
+INSERT INTO `blind_test`.`player` (`player_id`, `username`, `points`) VALUES (1, 'Player1', 100); 
+INSERT INTO `blind_test`.`player` (`player_id`, `username`, `points`) VALUES (2, 'Player2', 200);
+INSERT INTO `blind_test`.`game_history` (`game_game_id`, `player_player_id`) VALUES (1, 1);
+INSERT INTO `blind_test`.`game_history` (`game_game_id`, `player_player_id`) VALUES (1, 2);
+INSERT INTO `blind_test`.`game` (`game_id`, `created_at`) VALUES (2, '2025-05-15 10:56:12');
+INSERT INTO `blind_test`.`player` (`player_id`, `username`, `points`) VALUES (3, 'Player3', 150);
+INSERT INTO `blind_test`.`player` (`player_id`, `username`, `points`) VALUES (4, 'Player4', 250);
+INSERT INTO `blind_test`.`game_history` (`game_game_id`, `player_player_id`) VALUES (2, 3);
+INSERT INTO `blind_test`.`game_history` (`game_game_id`, `player_player_id`) VALUES (2, 4); 
+INSERT INTO `blind_test`.`game` (`game_id`, `created_at`) VALUES (3, '2025-05-15 10:56:12');
+INSERT INTO `blind_test`.`player` (`player_id`, `username`, `points`) VALUES (5, 'Player5', 300);
+INSERT INTO `blind_test`.`player` (`player_id`, `username`, `points`) VALUES (6, 'Player6', 350);
+INSERT INTO `blind_test`.`game_history` (`game_game_id`, `player_player_id`) VALUES (3, 5);
+INSERT INTO `blind_test`.`game_history` (`game_game_id`, `player_player_id`) VALUES (3, 6);
+INSERT INTO `blind_test`.`game` (`game_id`, `created_at`) VALUES (4, '2025-05-15 10:56:12');
+INSERT INTO `blind_test`.`player` (`player_id`, `username`, `points`) VALUES (7, 'Player7', 400);
+INSERT INTO `blind_test`.`player` (`player_id`, `username`, `points`) VALUES (8, 'Player8', 450);
+INSERT INTO `blind_test`.`game_history` (`game_game_id`, `player_player_id`) VALUES (4, 7);
+INSERT INTO `blind_test`.`game_history` (`game_game_id`, `player_player_id`) VALUES (4, 8);
