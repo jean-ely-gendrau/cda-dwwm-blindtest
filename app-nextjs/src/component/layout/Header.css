@@ -1,0 +1,22 @@
+.menu-navigation{
+    
+    display: flex;
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blue;
+    
+}
+
+.nav-container{
+
+    display: flex;
+    gap: 50px;
+}
+
+.nav-container li:hover{
+
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
