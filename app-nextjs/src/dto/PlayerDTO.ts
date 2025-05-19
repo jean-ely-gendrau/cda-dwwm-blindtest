@@ -1,55 +1,17 @@
 class PlayerDTO {
-    playerId: number;
-    points: number;
-    username: string;
 
-    constructor(playerId: number, points: number, username: string) {
-        this.playerId = playerId;
-        this.points = points;
-        this.username = username;
-    }
-    
-    getPlayerId(): number {
-        return this.playerId;
-    }
-
-    getPoints(): number {
-        return this.points;
-    }
-
-    getUsername(): string {
-        return this.username;
-    }
-
-    setPlayerId(playerId: number): void {
-        this.playerId = playerId;
-    }
-
-    setPoints(points: number): void {
-        this.points = points;
-    }
-
-    setUsername(username: string): void {
-        this.username = username;
-    }
-
-    toString(): string {
-        return `Player ID: ${this.playerId}, Points: ${this.points}, Username: ${this.username}`;
-    }
-
-    toJSON(): string {
-        return JSON.stringify({
-            playerId: this.playerId,
-            points: this.points,
-            username: this.username,
-        });
-    }
-
-    static fromJSON(json: string): PlayerDTO {
-        const data = JSON.parse(json);
-        return new PlayerDTO(data.playerId, data.points, data.username);
-    }
-
+    /** 
+     * Constructor to initialize the PlayerDTO object
+     * @param player_id - Unique identifier for the player
+     * @param points - Points scored by the player
+     * @param username - Username of the player
+    */
+    constructor(
+        private player_id: number, 
+        private points: number, 
+        private username: string
+    ) {}
+  
 }
 
 export default PlayerDTO;
