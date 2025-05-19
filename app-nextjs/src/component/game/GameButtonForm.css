@@ -1,0 +1,24 @@
+.home-start-button-container{
+
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    
+}
+
+.home-start-button-container button{
+    
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.home-start-button-container button:hover{
+
+    color: rgb(210, 181, 255);
+
+}
