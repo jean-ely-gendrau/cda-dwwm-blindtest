@@ -12,6 +12,17 @@
     color: white;
 }
 
+.hero-container button{
+
+    display: flex;
+    border: 1px solid #ccc;
+    font-size: 1.3em;
+    width: 20%;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
 .game-title{
 
     font-size: 3rem;

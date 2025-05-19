@@ -10,6 +10,7 @@ export default function Hero(){
             <p className="game-description">
             Cette application est un « blind-test ». Défiez-vous et vos amis avec ce quiz musical ! Choisissez un thème et vous aurez 10 secondes pour deviner chaque titre !
             </p>
+            <button>JOUER UNE PARTIE</button>
         </div>
 
     );
