@@ -5,12 +5,15 @@ services:
       image: mysql:8
       restart: always
       environment:
-        MYSQL_DATABASE: blind-test
+        MYSQL_DATABASE: blind_test
         MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         MYSQL_USER: ${MYSQL_USER}
         MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       ports:
         - "3325:3306"
+      volumes:
+        - ./data-repos/sql-init.sql:/docker-entrypoint-initdb.d/init.sql
+        - data_mysql:/var/lib/mysql
   
   adminer:
     container_name: adminer
@@ -18,3 +21,6 @@ services:
     restart: always
     ports:
       - 8100:8080
+
+volumes:
+  data_mysql:
