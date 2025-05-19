@@ -8,7 +8,7 @@ export interface UpdatePlayer {
 }
 
 export interface PlayerInterfaceDTO {
-    playerId: number;
+    player_id: number;
     points: number;
     username: string;
 }
