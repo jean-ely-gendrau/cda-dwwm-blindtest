@@ -1,62 +1,142 @@
-.main-container-game{
+.grid-main-container{
 
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-  }
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 100%;
+  height: 80%;
+  justify-content: center;
+}
+
+.main-game-block{
+
+  display: flex;
+  justify-content: center;
+}
+
+.input-container{
+
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 2rem;
+}
+
+.player-list-container{
+
+  border: 1px solid #ccc;
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  width: 100%;
+  justify-items: center;
+}
+
+.player-name{
+
+  display: flex;
+  padding-top: 10px;
+  color: #86dafc;
+  font-weight: bold;
+  font-size: 1.6em;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  height: 10%;
+  justify-content: center;
+
+}
+
+.player-list-container h1{
   
-  .main-game-block{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.6em;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-weight: bold;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: 1px solid #ccc;
+}
+
+.lobby-buttons-container button{
+
+  padding: 10px;
+  display: flex;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+
+}
+
+.lobby-buttons-container button:hover{
+
+  color: rgb(255, 221, 221);
+  background: linear-gradient(to right, #0080ff, #4ca1af);
+
+}
+
+.lobby-buttons-container{
+
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
   
-    display: flex;
-    justify-content: center;
-  }
+
+}
+
+.rules-text{
+
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 40px;
+}
+
+.rules-text p{
+
+  font-size: 1.6em;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.game-container{
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.input-game-answer{
   
-  .input-container{
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+
+}
+
+.input-game-answer input{
+
+  text-align: center;
+  border: 1px solid #ccc;
+  width: 60%;
+  height: 50%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+.music-elements-container{
   
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    padding-bottom: 2rem;
-  }
-  
-  .player-list-container{
-  
-    border: 1px solid #ccc;
-    display: grid;
-    grid-template-rows: 1fr 9fr;
-    width: 100%;
-  }
-  
-  .players-list{
-  
-    display: grid;
-    width: 100%;
-    justify-content: center;
-    align-items: start;
-    height: 10%;
-  }
-  
-  .player-name{
-  
-    display: flex;
-    padding-top: 10px;
-    color: #86dafc;
-    font-weight: bold;
-    font-size: 1.4em;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  
-  }
-  
-  .player-list-container h1{
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    font-size: 1.6em;
-    width: 100%;
-    height: 100%;
-    color: white;
-    font-weight: bold;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 1px solid #ccc;
-  }
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  padding-top: 20px;
+
+}
