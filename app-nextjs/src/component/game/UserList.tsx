@@ -1,10 +1,29 @@
 'use client'
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../component/game/MainGrid.css";
 
 
 export function UserList(){
+
+    // username devient un tableau avec l'argument []
+    const [username, setUsername] = useState("[]");
+
+    useEffect(()=>{
+
+        async function fetchUsername(){
+
+            const response = await fetch("/api/v1/room");
+            // Récupération de l'objet contenant tous les pseudos stockés en BDD dans la table Player
+            const players = await response.json();
+        }
+
+        fetchUsername();
+
+    }, []); // Possibilité de mettre une variable entre les crochets,
+            // pour que lorsque celle-ci est modifiée, la fonction soit réexécutée
+
+
 
     return(
 
